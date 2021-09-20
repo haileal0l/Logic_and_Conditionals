@@ -1,0 +1,55 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Understanding_Logic
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Boolean actor;
+            Boolean genre;
+
+            Console.WriteLine("Does this show have your favorite actor? Y or N:");
+            string HasActor = Console.ReadLine().ToUpper();
+
+            if (HasActor == "Y")
+            {
+                actor = true;
+            } else
+            {
+                actor = false;
+            }
+
+            Console.WriteLine("Is this show your favorite genre? Y or N:");
+            string HasGenre = Console.ReadLine().ToUpper();
+
+            if (HasGenre == "Y")
+            {
+                genre = true;
+            }
+            else
+            {
+                genre = false;
+            }
+
+            bool shouldYouWatch = actor || genre;
+
+            if (shouldYouWatch == false)
+            {
+                Console.WriteLine($"The program returned {shouldYouWatch}. Maybe skip out on this one.");
+            } else if (shouldYouWatch == true)
+            {
+                Console.WriteLine($"The program returned {shouldYouWatch}. Trying giving this show a chance!");
+            } else
+            {
+                Console.WriteLine("Something went wrong.");
+            }
+
+            Console.ReadKey();
+        }
+    }
+}
