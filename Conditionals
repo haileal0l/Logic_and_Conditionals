@@ -1,0 +1,37 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Conditionals
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Random rnd = new Random();
+            int number = rnd.Next(1, 11);
+
+            Console.WriteLine("I'm thinking of a number 1-10. Try and guess it: ");
+            string guess = Console.ReadLine();
+            int newGuess = Int32.Parse(guess);
+
+            if (newGuess == number)
+            {
+                Console.WriteLine($"Congratulations! The number was {number}.");
+            } else if (newGuess < number)
+            {
+                Console.WriteLine($"Your guess was too low.");
+            } else if (newGuess > number)
+            {
+                Console.WriteLine($"Your guess was too high.");
+            } else
+            {
+                Console.WriteLine($"Something went wrong...");
+            }
+
+            Console.ReadKey();
+        }
+    }
+}
